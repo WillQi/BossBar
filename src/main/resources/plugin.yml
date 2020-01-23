@@ -1,0 +1,14 @@
+name: BossBar
+description: Add a boss bar for any entity's health!
+version: "1.0.0"
+api: ["1.0.0"]
+author: William Qi
+main: io.github.willqi.bossbar.BossBarPlugin
+
+permissions:
+  io.github.willqi.bossbar.command.setbossbar:
+    description: "Gives users the ability to run /setbossbar"
+    default: op
+  io.github.willqi.bossbar.command.removebossbar:
+    description: "Gives users the ability to run /removebossbar"
+    default: op
