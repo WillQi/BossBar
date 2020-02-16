@@ -42,9 +42,9 @@ public class SetBossBarCommand extends Command {
             return true;
         }
 
-        String bossBarText = args[1];
+        StringBuilder bossBarText = new StringBuilder(args[1]);
         for (int i = 2; i < args.length; i++) {
-            bossBarText = bossBarText + " " + args[i];
+            bossBarText.append(" " + args[i]);
         }
 
         if (args[0].toLowerCase().equals("@a")) {
@@ -55,10 +55,10 @@ public class SetBossBarCommand extends Command {
 
                     if (BossBarManager.playerHasBossBar(player)) {
                         DummyBossBar bossbar = BossBarManager.getPlayerBossBar(player);
-                        bossbar.setText(bossBarText);
+                        bossbar.setText(bossBarText.toString());
                     } else {
                         DummyBossBar bossBar = new Builder(player)
-                            .text(bossBarText)
+                            .text(bossBarText.toString())
                             .build();
                         player.createBossBar(bossBar);
                         BossBarManager.addBossBar(player, bossBar);
@@ -73,10 +73,10 @@ public class SetBossBarCommand extends Command {
                     for (Player player : players.values()) {
                         if (BossBarManager.playerHasBossBar(player)) {
                             DummyBossBar bossbar = BossBarManager.getPlayerBossBar(player);
-                            bossbar.setText(bossBarText);
+                            bossbar.setText(bossBarText.toString());
                         } else {
                             DummyBossBar bossBar = new Builder(player)
-                                .text(bossBarText)
+                                .text(bossBarText.toString())
                                 .build();
                             player.createBossBar(bossBar);
                             BossBarManager.addBossBar(player, bossBar);
@@ -95,10 +95,10 @@ public class SetBossBarCommand extends Command {
             }
             if (BossBarManager.playerHasBossBar(target)) {
                 DummyBossBar bossbar = BossBarManager.getPlayerBossBar(target);
-                bossbar.setText(bossBarText);
+                bossbar.setText(bossBarText.toString());
             } else {
                 DummyBossBar bossBar = new Builder(target)
-                        .text(bossBarText)
+                        .text(bossBarText.toString())
                         .build();
                 target.createBossBar(bossBar);
                 BossBarManager.addBossBar(target, bossBar);
