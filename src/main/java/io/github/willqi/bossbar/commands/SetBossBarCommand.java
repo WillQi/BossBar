@@ -44,7 +44,8 @@ public class SetBossBarCommand extends Command {
 
         StringBuilder bossBarText = new StringBuilder(args[1]);
         for (int i = 2; i < args.length; i++) {
-            bossBarText.append(" " + args[i]);
+            bossBarText.append(" ");
+            bossBarText.append(args[i]);
         }
 
         if (args[0].toLowerCase().equals("@a")) {
