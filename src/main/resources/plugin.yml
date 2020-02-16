@@ -1,6 +1,6 @@
 name: BossBar
 description: Add a boss bar for any entity's health!
-version: "1.0.0"
+version: "1.1.0"
 api: ["1.0.0"]
 author: William Qi
 main: io.github.willqi.bossbar.BossBarPlugin
