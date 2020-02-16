@@ -68,6 +68,7 @@ public class RemoveBossBarCommand extends Command {
                 }
 
             }
+            sender.sendMessage(TextFormat.GREEN + "Removed boss bar for everyone!");
         } else {
             Player target = sender.getServer().getPlayer(args[0]);
             if (target == null) {
