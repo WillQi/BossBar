@@ -42,10 +42,10 @@ public class SetBossBarCommand extends Command {
             return true;
         }
 
-        StringBuilder bossBarText = new StringBuilder(args[1]);
+        StringBuilder bossBarText = new StringBuilder(args[1].replaceAll("-newline-", "\n"));
         for (int i = 2; i < args.length; i++) {
             bossBarText.append(" ");
-            bossBarText.append(args[i]);
+            bossBarText.append(args[i].replaceAll("-newline-", "\n"));
         }
 
         if (args[0].toLowerCase().equals("@a")) {
